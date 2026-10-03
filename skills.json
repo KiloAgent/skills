@@ -1,0 +1,28 @@
+{
+  "skills": [
+    {
+      "slug": "agentic-loop-analyzer",
+      "name": "agentic-loop-analyzer",
+      "description": "Ranks your recurring tasks by how much an agent could take over.",
+      "repo": "https://github.com/KiloAgent/agentic-loop-analyzer",
+      "tool_url": "https://www.kiloagent.com/tools/loop-audit",
+      "status": "building"
+    },
+    {
+      "slug": "portal-agent-readiness",
+      "name": "portal-agent-readiness",
+      "description": "Checks how automatable a portal or web tool is, with the best route in.",
+      "repo": "https://github.com/KiloAgent/portal-agent-readiness",
+      "tool_url": "https://www.kiloagent.com/tools/portal-check",
+      "status": "building"
+    },
+    {
+      "slug": "chase-email-templates",
+      "name": "chase-email-templates",
+      "description": "12 follow-up scenarios x 3 escalating emails.",
+      "repo": "https://github.com/KiloAgent/chase-email-templates",
+      "tool_url": "https://www.kiloagent.com/tools/chase-emails",
+      "status": "building"
+    }
+  ]
+}
