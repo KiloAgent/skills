@@ -1,0 +1,38 @@
+{
+  "install_command": "npx skills add KiloAgent/skills",
+  "skills": [
+    {
+      "slug": "agentic-loop-analyzer",
+      "name": "agentic-loop-analyzer",
+      "description": "Ranks your recurring tasks by how much an agent could take over.",
+      "repo": "https://github.com/KiloAgent/agentic-loop-analyzer",
+      "tool_url": "https://www.kiloagent.com/tools/loop-audit",
+      "status": "building",
+      "skill_path": "skills/agentic-loop-analyzer",
+      "install_command": "npx skills add KiloAgent/agentic-loop-analyzer",
+      "paste_in": "PASTE_IN.md"
+    },
+    {
+      "slug": "portal-agent-readiness",
+      "name": "portal-agent-readiness",
+      "description": "Checks how automatable a portal or web tool is, with the best route in.",
+      "repo": "https://github.com/KiloAgent/portal-agent-readiness",
+      "tool_url": "https://www.kiloagent.com/tools/portal-check",
+      "status": "live",
+      "skill_path": "skills/portal-agent-readiness",
+      "install_command": "npx skills add KiloAgent/portal-agent-readiness",
+      "paste_in": "PASTE_IN.md"
+    },
+    {
+      "slug": "chase-email-templates",
+      "name": "chase-email-templates",
+      "description": "12 follow-up scenarios x 3 escalating emails.",
+      "repo": "https://github.com/KiloAgent/chase-email-templates",
+      "tool_url": "https://www.kiloagent.com/tools/chase-emails",
+      "status": "live",
+      "skill_path": "skills/chase-email-templates",
+      "install_command": "npx skills add KiloAgent/chase-email-templates",
+      "paste_in": "PASTE_IN.md"
+    }
+  ]
+}
