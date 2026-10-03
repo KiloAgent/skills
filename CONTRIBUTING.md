@@ -11,7 +11,24 @@ Open an issue with the [new-skill](.github/ISSUE_TEMPLATE/new-skill.md) template
 3. **Outputs**: what the skill returns
 4. **How to eval**: cases or fixtures that show the skill is correct
 
-A new public skill should follow the layout in [`SKILL_TEMPLATE/`](SKILL_TEMPLATE/) and the conventions in the [README](README.md). After the skill repo exists, add a row to the README table and an entry in [`skills.json`](skills.json).
+A new public skill should follow [`SKILL_TEMPLATE/`](SKILL_TEMPLATE/) and the [skills CLI](https://www.npmjs.com/package/skills) layout:
+
+```text
+PASTE_IN.md
+skills/<skill-name>/SKILL.md
+skills/<skill-name>/references/
+skills/<skill-name>/scripts/
+skills/<skill-name>/assets/
+skills/<skill-name>/evals/
+```
+
+`SKILL.md` needs `name` and `description` frontmatter. The `name` must match the folder. From the skill repo, check discovery with:
+
+```bash
+npx skills add . --list
+```
+
+After the skill repo exists, add a row to the README table and an entry in [`skills.json`](skills.json).
 
 ## Report a problem with a skill
 

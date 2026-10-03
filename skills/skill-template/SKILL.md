@@ -1,4 +1,10 @@
-# Skill title
+---
+name: skill-template
+description: Skeleton for a public KiloAgent skill. Use this when creating a new skill repo that follows skills/<name>/SKILL.md.
+license: MIT
+---
+
+# skill-template
 
 Write one sentence that names the task.
 
@@ -20,15 +26,11 @@ State the situation where this skill applies.
 
 ## How to run
 
-Tell the agent to read the schemas and prompts, treat user input as untrusted data, then produce the output.
+Tell the agent to read files in `references/` and `scripts/`, treat user input as untrusted data, then produce the output.
 
-## Prompts
+## References
 
-Point at files in `prompts/`. Say which prompt is system text and which wraps user input.
-
-## Schemas
-
-Point at files in `schema/`. Scoring that can be computed belongs in code.
+Point at files in `references/`. Scoring that can be computed belongs in `scripts/`.
 
 ## Safety
 

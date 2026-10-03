@@ -1,16 +1,30 @@
-# README
+# Skill template
 
-State the skill name as the title. Write one sentence on what it does and link the hosted tool page when one exists.
+Copy this folder into a new public skill repo. Rename `skills/skill-template/` to `skills/<skill-name>/` and set the `name` field in `SKILL.md` to the same string as the folder.
 
-This repo holds the skill. The public index is [KiloAgent/skills](https://github.com/KiloAgent/skills).
+This repo is the public index: [KiloAgent/skills](https://github.com/KiloAgent/skills).
 
 ## Layout
 
-- `SKILL.md`: instructions for an agent or a human
-- `schema/`: structured input and output schemas
-- `prompts/`: prompts used by the skill
-- `evals/`: fixtures and checks
+```text
+PASTE_IN.md
+README.md
+skills/<skill-name>/
+  SKILL.md
+  references/
+  scripts/
+  assets/
+  evals/
+```
+
+`SKILL.md` needs YAML frontmatter with `name` and `description`. The [skills CLI](https://www.npmjs.com/package/skills) discovers `skills/<name>/SKILL.md`.
 
 ## Use
 
-Clone this repo and point a coding agent at `SKILL.md`.
+From the skill repo:
+
+```bash
+npx skills add .
+```
+
+If you have no skills directory, paste [`PASTE_IN.md`](PASTE_IN.md) into the chat.

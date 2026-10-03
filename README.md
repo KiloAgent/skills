@@ -6,9 +6,11 @@ Small, readable skills for boring operations work.
 
 This repository is the public index for KiloAgent skills. Each skill lives in its own public repository. This repo holds the list, conventions, and links.
 
+Skills follow the [Agent Skills](https://agentskills.io/specification) format and the [skills CLI](https://www.npmjs.com/package/skills) discovery layout: `skills/<name>/SKILL.md` with `name` and `description` frontmatter.
+
 ## What's a skill here?
 
-A skill is a folder with a `SKILL.md` that tells an agent (or a human) what the skill does, its inputs and outputs, plus prompts, schemas, and evals. Each skill is its own public repo.
+A skill is a folder `skills/<name>/` with a `SKILL.md` that tells an agent (or a human) what the skill does, its inputs and outputs, plus prompts, schemas, and evals. The `description` field says what the skill does and when to use it. Each skill is its own public repo.
 
 ## Skills index
 
@@ -22,9 +24,37 @@ Status values: `live`, `building`, `idea`. Hosted tool pages are still being bui
 
 The same list is in [`skills.json`](skills.json).
 
-## Quick start
+### Install
 
-Use the hosted tool page, or clone the skill repo and point your agent at `SKILL.md`.
+Each skill repo should expose `skills/<skill-name>/`. Copy that folder into one of:
+
+```text
+.claude/skills/
+.agents/skills/
+.cursor/skills/
+.codex/skills/
+.github/skills/
+```
+
+Or install with the skills CLI. This command form was verified against `vercel-labs/agent-skills` (GitHub shorthand) and against a local checkout of this repo (`npx skills add .`):
+
+```bash
+npx skills add KiloAgent/agentic-loop-analyzer
+```
+
+```bash
+npx skills add KiloAgent/portal-agent-readiness
+```
+
+```bash
+npx skills add KiloAgent/chase-email-templates
+```
+
+The CLI needs `skills/<name>/SKILL.md` with `name` and `description` in that repo. The three skill repos are still `building`, so those shorthand installs find no skills until their first `SKILL.md` lands.
+
+If you have no skills directory, open `PASTE_IN.md` in the skill repo and paste it into the chat.
+
+## Quick start
 
 ### Hosted tool page
 
@@ -34,23 +64,25 @@ Open the "Try it online" link from the table. Example:
 https://www.kiloagent.com/tools/loop-audit
 ```
 
-### Clone and run locally
+### Clone and copy
 
 ```bash
 git clone https://github.com/KiloAgent/<skill>.git
 ```
 
-Then tell your coding agent to read `SKILL.md`.
+Then copy `skills/<skill>/` into `.claude/skills/`, `.agents/skills/`, `.cursor/skills/`, `.codex/skills/`, or `.github/skills/`, or tell your coding agent to read `skills/<skill>/SKILL.md`.
 
 ## Conventions every skill follows
 
-- Standard layout: `SKILL.md`, `schema/`, `prompts/`, `evals/`, `README.md`
+- CLI layout: `skills/<name>/SKILL.md` with `name` and `description` frontmatter
+- Optional folders next to `SKILL.md`: `references/`, `scripts/`, `assets/`, `evals/`
+- `PASTE_IN.md` at the skill repo root for chat users with no skills directory
 - Structured input and output schemas
 - Deterministic scoring in code; LLM for judgment and writing
 - Evals included
 - No secrets or customer data in the repo
 
-A starter tree lives in [`SKILL_TEMPLATE/`](SKILL_TEMPLATE/).
+A starter tree lives in [`SKILL_TEMPLATE/`](SKILL_TEMPLATE/). This index repo also keeps a discoverable copy at [`skills/skill-template/`](skills/skill-template/).
 
 ## Safety and privacy
 
